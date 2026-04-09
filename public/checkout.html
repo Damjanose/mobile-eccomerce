@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout — MobileStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="nav-logo">📱 MobileStore</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin.html">Admin</a></li>
+                <li>
+                    <a href="/cart.html" class="cart-link">
+                        🛒 Cart
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="checkout-container">
+        <div class="checkout-form">
+            <h2>Shipping Information</h2>
+            <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input type="text" id="customer-name" placeholder="John Doe">
+                <div class="error" id="err-name">Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="john@example.com">
+                <div class="error" id="err-email">Valid email is required</div>
+            </div>
+            <div class="form-group">
+                <label for="address">Shipping Address</label>
+                <textarea id="address" rows="3" placeholder="123 Main St, City, Country"></textarea>
+                <div class="error" id="err-address">Address is required</div>
+            </div>
+
+            <hr class="form-divider">
+
+            <h2>Payment Information</h2>
+            <p style="font-size:0.85rem;color:#888;margin-bottom:1rem;">This is a simulated payment. No real charges will be made.</p>
+
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                <div class="card-type-display" id="card-type"></div>
+                <div class="error" id="err-card">Valid 16-digit card number is required</div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="card-expiry">Expiry (MM/YY)</label>
+                    <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                    <div class="error" id="err-expiry">Valid expiry date is required</div>
+                </div>
+                <div class="form-group">
+                    <label for="card-cvv">CVV</label>
+                    <input type="text" id="card-cvv" placeholder="123" maxlength="3">
+                    <div class="error" id="err-cvv">3-digit CVV is required</div>
+                </div>
+            </div>
+
+            <div id="checkout-error" class="message" style="margin-bottom:1rem;"></div>
+            <button class="btn btn-primary" id="place-order-btn" style="width:100%;">Place Order</button>
+        </div>
+
+        <div class="checkout-summary">
+            <h2>Order Summary</h2>
+            <div id="summary-items"></div>
+            <div class="checkout-summary-total">
+                <span>Total</span>
+                <span id="summary-total">$0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 MobileStore. School Project.</p>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+</body>
+</html>

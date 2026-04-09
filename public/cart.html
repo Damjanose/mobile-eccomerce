@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart — MobileStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="nav-logo">📱 MobileStore</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin.html">Admin</a></li>
+                <li>
+                    <a href="/cart.html" class="cart-link active">
+                        🛒 Cart
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <h1>Shopping Cart</h1>
+        <div id="cart-content">
+            <!-- Loaded dynamically -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 MobileStore. School Project.</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>
