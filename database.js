@@ -2,10 +2,11 @@ const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
 
-// Ensure db directory exists
-const dbDir = path.join(__dirname, 'db');
+// On Vercel, use /tmp since the rest of the filesystem is read-only
+const isVercel = !!process.env.VERCEL;
+const dbDir = isVercel ? '/tmp' : path.join(__dirname, 'db');
 if (!fs.existsSync(dbDir)) {
-    fs.mkdirSync(dbDir);
+    fs.mkdirSync(dbDir, { recursive: true });
 }
 
 const db = new Database(path.join(dbDir, 'store.db'));

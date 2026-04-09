@@ -4,7 +4,9 @@
   "description": "Simple e-commerce mobile phone store — school project",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'Build complete'",
+    "vercel-build": "echo 'Build complete'"
   },
   "dependencies": {
     "better-sqlite3": "^11.0.0"

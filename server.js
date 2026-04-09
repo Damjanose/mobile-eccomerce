@@ -206,9 +206,14 @@ async function handleRequest(req, res) {
     });
 }
 
-const PORT = 3000;
-const server = http.createServer(handleRequest);
+// Export handler for Vercel serverless
+module.exports = handleRequest;
 
-server.listen(PORT, () => {
-    console.log(`Mobile Store server running at http://localhost:${PORT}`);
-});
+// Only start server when running directly (not imported by Vercel)
+if (require.main === module) {
+    const PORT = process.env.PORT || 3000;
+    const server = http.createServer(handleRequest);
+    server.listen(PORT, () => {
+        console.log(`Mobile Store server running at http://localhost:${PORT}`);
+    });
+}
